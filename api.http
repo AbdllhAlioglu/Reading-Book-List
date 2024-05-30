@@ -1,0 +1,33 @@
+
+# Show Book
+GET http://localhost:3001/books HTTP/1.1
+Content-Type: application/json 
+
+###
+
+#Create Book
+POST http://localhost:3001/books HTTP/1.1
+Content-Type: application/json 
+
+
+{
+  "title" : "Bozkurtlar",
+ 
+}
+
+###
+
+#Update Book 
+PUT http://localhost:3001/books/1 HTTP/1.1
+Content-Type: application/json
+
+{
+  "title" : "Bozkurtlar Diriliyor"
+}
+
+###
+
+# Delete Book
+DELETE http://localhost:3001/books/2 HTTP/1.1
+Content-Type: application/json
+
