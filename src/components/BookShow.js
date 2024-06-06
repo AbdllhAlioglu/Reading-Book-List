@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import BookEdit from "./BookEdit";
 import BooksContext from "../context/books";
 
-function BookShow({book}) {
+function BookShow({ book }) {
   const [showEdit, setShowEdit] = useState(false);
   const { deleteBookById } = useContext(BooksContext);
 
@@ -18,7 +18,12 @@ function BookShow({book}) {
     setShowEdit(false);
   };
 
-  let content = <h3>{book.title}</h3>;
+  let content = (
+    <div>
+      <h3>{book.title}</h3>
+      <p>Page : {book.page}</p>
+    </div>
+  );
   if (showEdit) {
     content = <BookEdit onSubmit={handleSubmit} book={book} />;
   }
