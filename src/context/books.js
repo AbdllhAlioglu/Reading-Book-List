@@ -11,10 +11,11 @@ function Provider({ children }) {
     setBooks(response.data);
   };
 
-  const editBookById = async (id, newTitle, newPage) => {
+  const editBookById = async (id, newTitle, newPage, newAuthor) => {
     const response = await axios.put("http://localhost:3001/books/" + id, {
       title: newTitle,
       page: newPage,
+      author: newAuthor,
     });
 
     const updatedBooks = books.map((book) => {

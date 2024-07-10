@@ -21,7 +21,8 @@ function BookShow({ book }) {
   let content = (
     <div>
       <h3>{book.title}</h3>
-      <p>Page : {book.page}</p>
+      <h4>Author: {book.author}</h4>
+      <p>Page: {book.page}</p>
     </div>
   );
   if (showEdit) {

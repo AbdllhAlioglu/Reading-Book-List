@@ -4,6 +4,7 @@ import BooksContext from "../context/books";
 function BookCreate() {
   const [title, setTitle] = useState("");
   const [page, setPage] = useState("");
+  const [author, setAuthor] = useState("");
   const { createBook } = useContext(BooksContext);
 
   const handleChange = (event) => {
@@ -14,11 +15,16 @@ function BookCreate() {
     setPage(event.target.value);
   };
 
+  const handleChangeAuthor = (event) => {
+    setAuthor(event.target.value);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     createBook(title, page);
     setTitle("");
     setPage("");
+    setAuthor("");
   };
 
   return (
@@ -37,6 +43,13 @@ function BookCreate() {
           className="input"
           value={page}
           onChange={handleChangePage}
+          style={{ width: "50%" }}
+        />
+        <label>Author</label>
+        <input
+          className="input"
+          value={author}
+          onChange={handleChangeAuthor}
           style={{ width: "50%" }}
         />
         <button className="button">Create!</button>
